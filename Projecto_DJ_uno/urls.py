@@ -15,12 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Projecto_DJ_uno.views import welcome, welcomeRed, ageCategory, getCurrentdate
+from Projecto_DJ_uno.views import welcome, welcomeRed, ageCategory, getCurrentdate, contentHTML, firtstemplate,templateParameters
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('Welcome/', welcome),
     path('WelcomeRed/', welcomeRed),
     path('AgeCategory/<int:age>', ageCategory),
-    path('GetDate/', getCurrentdate)
+    path('GetDate/', getCurrentdate),
+    path('ContentHTML/<name>/<int:age>', contentHTML),
+    path('FirtsTem/', firtstemplate),
+    path('TemplateParameters/', templateParameters)
 ]
