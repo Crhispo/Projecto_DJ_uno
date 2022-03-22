@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Projecto_DJ_uno.views import welcome, welcomeRed, ageCategory, getCurrentdate, contentHTML, firtstemplate,templateParameters
+from Projecto_DJ_uno.views import welcome, welcomeRed, ageCategory, getCurrentdate, contentHTML, firtstemplate, templateParameters, templateLoader
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,5 +25,6 @@ urlpatterns = [
     path('GetDate/', getCurrentdate),
     path('ContentHTML/<name>/<int:age>', contentHTML),
     path('FirtsTem/', firtstemplate),
-    path('TemplateParameters/', templateParameters)
+    path('TemplateParameters/', templateParameters),
+    path('TemplateLoarder/', templateLoader)
 ]

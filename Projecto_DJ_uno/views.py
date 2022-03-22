@@ -1,6 +1,7 @@
 from datetime import datetime
 from django.template import Template, Context
 from django.http import HttpResponse
+from django.template.loader import get_template
 
 
 # Request: Sirve para realizar peticiones
@@ -91,4 +92,16 @@ def templateParameters(request):  # Argumento de tipo "Request"
         {"nombre": nombre, "fechaActual": fechaActual, "lenguajes": lenguajes})
     # Renderizar el documento
     document = template.render(context)
+    return HttpResponse(document)
+
+
+def templateLoader(request):  # Argumento de tipo "Request"
+    nombre = "Crhistian"
+    fechaActual = datetime.now().strftime("%A %d/%m/%Y %H:%M:%S")
+    lenguajes = ["python", "Golang", "JavaScript", "PHP", "C+", "Ruby"]
+    # Expecifica donde esta la plantilla y la almacena en una variable
+    temExterna = get_template('temParameters.html')
+    # Renderizar documento
+    document = temExterna.render(
+        {"nombre": nombre, "fechaActual": fechaActual, "lenguajes": lenguajes})
     return HttpResponse(document)
