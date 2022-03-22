@@ -54,7 +54,7 @@ ROOT_URLCONF = 'Projecto_DJ_uno.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['../Projecto_DJ_uno/Projecto_DJ_uno/plantillas/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
